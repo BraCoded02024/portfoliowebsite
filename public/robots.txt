@@ -1,0 +1,5 @@
+# Replace https://bernardowusu.com with your live portfolio URL (must match sitemap + VITE_SITE_URL / site canonical).
+User-agent: *
+Allow: /
+
+Sitemap: https://bernardowusu.com/sitemap.xml
