@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { projectHasCaseStudy, projectHasDemo, projectHasDetail } from '../data/projects'
 
@@ -7,21 +7,37 @@ export function ProjectCard({ project, onViewDetail, index, featured = false }) 
   const hasCaseStudy = projectHasCaseStudy(project)
   const hasDemo = projectHasDemo(project)
   const [showVideo, setShowVideo] = useState(false)
+  const [videoReady, setVideoReady] = useState(false)
+  const delayDone = useRef(false)
 
   useEffect(() => {
     if (!project.cardVideo) {
       setShowVideo(false)
+      setVideoReady(false)
+      delayDone.current = false
       return
     }
 
+    delayDone.current = false
+    setShowVideo(false)
+    setVideoReady(false)
+
     const timer = window.setTimeout(() => {
+      delayDone.current = true
       setShowVideo(true)
-    }, project.cardVideoDelayMs ?? 2000)
+    }, project.cardVideoDelayMs ?? 900)
 
     return () => window.clearTimeout(timer)
   }, [project.cardVideo, project.cardVideoDelayMs])
 
+  useEffect(() => {
+    if (videoReady && delayDone.current) {
+      setShowVideo(true)
+    }
+  }, [videoReady])
+
   const detailLabel = hasCaseStudy ? 'Case study' : hasDemo ? 'Demo' : 'Details'
+  const canShowVideo = Boolean(project.cardVideo) && showVideo && videoReady
 
   return (
     <motion.article
@@ -39,25 +55,27 @@ export function ProjectCard({ project, onViewDetail, index, featured = false }) 
           </span>
         )}
 
-        {!showVideo && (
-          <img
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            className="h-full w-full object-contain object-center"
-          />
-        )}
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          className={`h-full w-full object-contain object-center transition-opacity duration-300 ${
+            canShowVideo ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
 
         {project.cardVideo && (
           <video
             src={project.cardVideo}
-            className={`h-full w-full object-contain object-center transition-opacity duration-500 ${
-              showVideo ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-300 ${
+              canShowVideo ? 'opacity-100' : 'opacity-0'
             }`}
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
+            onLoadedData={() => setVideoReady(true)}
+            onCanPlay={() => setVideoReady(true)}
             aria-label={`${project.title} preview video`}
           />
         )}

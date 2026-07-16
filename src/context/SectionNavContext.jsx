@@ -13,10 +13,11 @@ export function SectionNavProvider({ children, sectionCount = SECTION_LABELS.len
 
   const releaseLock = useCallback(() => {
     if (lockTimer.current) clearTimeout(lockTimer.current)
+    // Short lock so swipe / nav taps feel responsive on mobile
     lockTimer.current = setTimeout(() => {
       locked.current = false
       lockTimer.current = null
-    }, 780)
+    }, 420)
   }, [])
 
   const goTo = useCallback(

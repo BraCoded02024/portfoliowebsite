@@ -27,7 +27,7 @@ export const projects = [
     tech: ['React', 'JavaScript', 'UI Design'],
     image: choplifeeLoginImg,
     cardVideo: choplifeeVideo,
-    cardVideoDelayMs: 2200,
+    cardVideoDelayMs: 800,
     liveUrl: '#',
     githubUrl: githubProfileUrl,
   },
