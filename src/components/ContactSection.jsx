@@ -32,7 +32,7 @@ export function ContactSection() {
           Let&apos;s build something remarkable
         </h2>
         <p className="mt-4 max-w-2xl text-base text-ink-muted">
-          Reach out for collaborations, consulting, or full-time opportunities.
+          Open to senior engineering roles, technical leadership, and high-impact product work.
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-5 lg:gap-12">

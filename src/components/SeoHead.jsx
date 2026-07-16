@@ -71,9 +71,9 @@ function buildOrganizationSchema() {
  * Helps Google associate searches for "Bernard Owusu" / "Bernard" with this site when combined with your domain and backlinks.
  */
 export function SeoHead() {
-  const title = `${PERSON.name} | Software Engineer & AI Developer | ${COMPANY.name} Founder`
+  const title = `${PERSON.name} | Senior Software Engineer & AI Developer | ${COMPANY.name} Founder`
   const description =
-    'Bernard Owusu — Software Engineer, AI & enterprise systems developer, and founder of CODETECHS. Portfolio: enterprise software, AI apps, mobile, and scalable backends.'
+    'Bernard Owusu — Senior Software Engineer, enterprise systems architect, and founder of CODETECHS. Portfolio: case studies, AI products, scalable platforms, and production delivery.'
 
   useEffect(() => {
     document.title = title

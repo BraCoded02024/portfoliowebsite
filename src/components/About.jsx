@@ -1,11 +1,5 @@
 import { COMPANY } from '../data/site'
-
-const highlights = [
-  'Full Stack Developer',
-  'Enterprise Systems Developer',
-  'AI Application Developer',
-  'Mobile App Developer',
-]
+import { leadershipSignals } from '../data/experience'
 
 export function About() {
   return (
@@ -18,13 +12,12 @@ export function About() {
           About
         </p>
         <h2 className="mt-3 font-display text-3xl tracking-tight text-ink sm:text-4xl">
-          Engineering systems that scale
+          Senior engineer. Founder. Delivery owner.
         </h2>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
-          <strong className="font-semibold text-ink">Bernard Owusu</strong> is a professional
-          software engineer with experience building enterprise systems, AI-powered
-          applications, mobile solutions, and scalable backend architectures. He is the
-          founder of{' '}
+          <strong className="font-semibold text-ink">Bernard Owusu</strong> is a senior software
+          engineer who designs and delivers enterprise systems, AI applications, and scalable
+          product architectures. As founder of{' '}
           <a
             href={COMPANY.url}
             target="_blank"
@@ -33,31 +26,23 @@ export function About() {
           >
             {COMPANY.name}
           </a>
-          , helping organizations ship reliable digital products.
+          , he leads projects from technical strategy through production — not just implementation.
         </p>
 
-        <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((text) => (
+        <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+          {leadershipSignals.map((signal) => (
             <li
-              key={text}
-              className="flex items-center gap-3 rounded-lg border border-border bg-surface px-4 py-3.5"
+              key={signal.title}
+              className="rounded-lg border border-border bg-surface px-4 py-4"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border text-accent">
-                <CheckIcon className="h-3.5 w-3.5" />
-              </span>
-              <span className="text-sm font-medium text-ink">{text}</span>
+              <p className="text-sm font-semibold text-ink">{signal.title}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+                {signal.description}
+              </p>
             </li>
           ))}
         </ul>
       </div>
     </section>
-  )
-}
-
-function CheckIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
-      <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   )
 }

@@ -4,11 +4,12 @@ import { Navbar } from '../components/Navbar'
 import { FullPageStage } from '../components/FullPageStage'
 import { Hero } from '../components/Hero'
 import { About } from '../components/About'
+import { ExperienceSection } from '../components/ExperienceSection'
 import { ProjectsSection } from '../components/ProjectsSection'
 import { SkillsSection } from '../components/SkillsSection'
 import { ContactSlide } from '../components/ContactSlide'
 
-const sections = [Hero, About, ProjectsSection, SkillsSection, ContactSlide]
+const sections = [Hero, About, ExperienceSection, ProjectsSection, SkillsSection, ContactSlide]
 
 export function Home() {
   return (

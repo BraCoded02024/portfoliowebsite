@@ -40,8 +40,8 @@ export function Hero() {
           </p>
 
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-ink-muted sm:text-base">
-            I build scalable enterprise systems, AI-powered applications, and digital solutions
-            for businesses and institutions. Founder of{' '}
+            I architect and ship scalable enterprise platforms, AI-powered products, and
+            production systems — from database design to client delivery. Founder of{' '}
             <a
               href={COMPANY.url}
               target="_blank"
@@ -53,10 +53,21 @@ export function Hero() {
             .
           </p>
 
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Highlights">
+            {['4 years experience', 'Enterprise & AI', 'Founder @ CODETECHS'].map((item) => (
+              <li
+                key={item}
+                className="rounded-md border border-border bg-surface-elevated px-3 py-1.5 text-xs font-medium text-ink-muted"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <button
               type="button"
-              onClick={() => goTo(2)}
+              onClick={() => goTo(3)}
               className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
               View projects

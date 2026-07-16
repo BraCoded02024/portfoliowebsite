@@ -1,23 +1,29 @@
 const skillGroups = [
   {
-    title: 'Frontend',
-    items: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript'],
+    title: 'Frontend & Product',
+    items: ['React', 'Next.js', 'Tailwind CSS', 'JavaScript', 'Mobile UX'],
   },
   {
-    title: 'Backend',
-    items: ['Node.js', 'Express', 'REST APIs'],
+    title: 'Backend & APIs',
+    items: ['Node.js', 'Express', 'REST APIs', 'System Design', 'PostgreSQL'],
   },
   {
-    title: 'Database',
-    items: ['PostgreSQL', 'MongoDB', 'MySQL'],
+    title: 'Data & Infrastructure',
+    items: ['PostgreSQL', 'MongoDB', 'MySQL', 'CI/CD', 'Production Deployments'],
   },
   {
-    title: 'AI / Mobile',
-    items: ['Machine Learning', 'Computer Vision', 'Flutter', 'React Native'],
+    title: 'AI & Mobile',
+    items: ['Machine Learning', 'Computer Vision', 'Flutter', 'React Native', 'Python'],
   },
   {
-    title: 'Other',
-    items: ['System Architecture', 'SaaS Development', 'Enterprise Systems'],
+    title: 'Senior Engineering',
+    items: [
+      'Architecture',
+      'Technical Leadership',
+      'SaaS Development',
+      'Enterprise Systems',
+      'Client Delivery',
+    ],
   },
 ]
 
@@ -39,7 +45,8 @@ export function SkillsSection() {
             Tools &amp; technologies
           </h2>
           <p className="mt-4 max-w-2xl text-base text-ink-muted">
-            Stack across product surfaces, platforms, and intelligent systems.
+            Depth across product engineering, platform architecture, AI integration, and
+            production delivery.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

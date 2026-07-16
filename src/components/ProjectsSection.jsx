@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { projects } from '../data/projects'
+import { featuredProjects, moreProjects } from '../data/projects'
 import { ProjectCard } from './ProjectCard'
 import { ProjectModal } from './ProjectModal'
 
 export function ProjectsSection() {
-  const [demoProject, setDemoProject] = useState(null)
+  const [detailProject, setDetailProject] = useState(null)
 
   return (
     <section id="projects" className="flex h-full min-h-0 flex-col bg-surface">
@@ -18,32 +18,52 @@ export function ProjectsSection() {
             Work
           </p>
           <h2 className="mt-3 font-display text-3xl tracking-tight text-ink sm:text-4xl">
-            Featured projects
+            Featured case studies
           </h2>
           <p className="mt-4 max-w-2xl text-base text-ink-muted">
-            Enterprise platforms, AI tooling, and production-grade applications built
-            end-to-end.
+            Selected projects with architecture decisions, business impact, and production
+            delivery — the kind of work I lead as a senior engineer.
           </p>
         </div>
 
         <div className="mx-auto mt-10 grid w-full max-w-6xl gap-6 md:grid-cols-2 md:gap-8">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}
               index={index}
-              onWatchDemo={setDemoProject}
+              onViewDetail={setDetailProject}
+              featured
+            />
+          ))}
+        </div>
+
+        <div className="mx-auto mt-14 w-full max-w-6xl shrink-0">
+          <h3 className="font-display text-2xl tracking-tight text-ink">More projects</h3>
+          <p className="mt-3 max-w-2xl text-sm text-ink-muted">
+            Additional products across food ordering, retail, streaming, and institutional
+            systems.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-8 grid w-full max-w-6xl gap-6 md:grid-cols-2 md:gap-8">
+          {moreProjects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index + featuredProjects.length}
+              onViewDetail={setDetailProject}
             />
           ))}
         </div>
       </div>
 
       <AnimatePresence>
-        {demoProject && (
+        {detailProject && (
           <ProjectModal
-            key={demoProject.id}
-            project={demoProject}
-            onClose={() => setDemoProject(null)}
+            key={detailProject.id}
+            project={detailProject}
+            onClose={() => setDetailProject(null)}
           />
         )}
       </AnimatePresence>

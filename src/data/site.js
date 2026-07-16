@@ -9,9 +9,9 @@ export const SITE_CANONICAL = (
 export const PERSON = {
   name: 'Bernard Owusu',
   alternateName: ['Bernard', 'Bernard Owusu Software Engineer'],
-  jobTitle: 'Software Engineer | AI & Enterprise Systems Developer',
+  jobTitle: 'Senior Software Engineer | Enterprise Systems & AI',
   description:
-    'Bernard Owusu is a professional software engineer building scalable enterprise systems, AI-powered applications, mobile solutions, and digital platforms. Founder of CODETECHS.',
+    'Bernard Owusu is a senior software engineer and founder of CODETECHS, building scalable enterprise platforms, AI-powered applications, and production-grade digital products end to end.',
 }
 
 /** Link to your business site — set the exact URL you use publicly. */

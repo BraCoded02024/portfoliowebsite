@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 
-export const SECTION_LABELS = ['Intro', 'About', 'Work', 'Skills', 'Contact']
+export const SECTION_LABELS = ['Intro', 'About', 'Experience', 'Work', 'Skills', 'Contact']
 
 const SectionNavContext = createContext(null)
 

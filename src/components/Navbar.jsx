@@ -6,9 +6,10 @@ import { useSectionNav } from '../context/SectionNavContext'
 const navItems = [
   { index: 0, label: 'Home' },
   { index: 1, label: 'About' },
-  { index: 2, label: 'Projects' },
-  { index: 3, label: 'Skills' },
-  { index: 4, label: 'Contact' },
+  { index: 2, label: 'Experience' },
+  { index: 3, label: 'Projects' },
+  { index: 4, label: 'Skills' },
+  { index: 5, label: 'Contact' },
 ]
 
 export function Navbar() {
@@ -74,7 +75,7 @@ export function Navbar() {
 
           <button
             type="button"
-            onClick={() => goTo(4)}
+            onClick={() => goTo(5)}
             className="hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white hover:opacity-90 sm:inline-block"
           >
             Let&apos;s talk
