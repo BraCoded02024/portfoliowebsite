@@ -100,6 +100,7 @@ export function SeoHead() {
       'AI developer portfolio',
     ].join(', '))
     setMeta('name', 'author', PERSON.name)
+    setMeta('name', 'google-site-verification', 'google60bb893ad44374bf')
     setMeta('property', 'og:type', 'website')
     setMeta('property', 'og:site_name', `${PERSON.name} — Portfolio`)
     setMeta('property', 'og:title', title)
