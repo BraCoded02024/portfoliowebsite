@@ -30,8 +30,9 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => goTo(0)}
-          className="font-display text-left text-xl tracking-tight text-ink transition-opacity hover:opacity-80"
+          className="flex items-center gap-2 font-display text-left text-xl tracking-tight text-ink transition-opacity hover:opacity-80"
         >
+          <img src="/favicon.svg" alt="" className="h-8 w-8 rounded-md" />
           BO<span className="text-accent">.</span>
         </button>
 

@@ -36,6 +36,7 @@ export function ProjectCard({ project, onViewDetail, index, featured = false }) 
     }
   }, [videoReady])
 
+  const hasLive = Boolean(project.liveUrl && project.liveUrl !== '#')
   const detailLabel = hasCaseStudy ? 'Case study' : hasDemo ? 'Demo' : 'Details'
   const canShowVideo = Boolean(project.cardVideo) && showVideo && videoReady
 
@@ -115,15 +116,34 @@ export function ProjectCard({ project, onViewDetail, index, featured = false }) 
         </div>
 
         <div className="mt-5 flex flex-wrap gap-2">
-          <button
-            type="button"
-            disabled={!hasDetail}
-            onClick={() => hasDetail && onViewDetail(project)}
-            title={!hasDetail ? 'Details not available yet' : `Open ${detailLabel.toLowerCase()}`}
-            className="inline-flex flex-1 min-w-[7rem] items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            {detailLabel}
-          </button>
+          {hasDetail ? (
+            <button
+              type="button"
+              onClick={() => onViewDetail(project)}
+              title={`Open ${detailLabel.toLowerCase()}`}
+              className="inline-flex flex-1 min-w-[7rem] items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-white"
+            >
+              {detailLabel}
+            </button>
+          ) : hasLive ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex flex-1 min-w-[7rem] items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-white"
+            >
+              Live
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              title="Details not available yet"
+              className="inline-flex flex-1 min-w-[7rem] items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Details
+            </button>
+          )}
           <a
             href={project.githubUrl}
             target="_blank"

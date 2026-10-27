@@ -6,6 +6,7 @@ import movieStreamImg from '../assets/movie-stream.png'
 import choplifeeLoginImg from '../assets/choplifee-login.png'
 import choplifeeVideo from '../assets/full recording Choplifee.compressed.mp4'
 import mamapeaceminiMartImg from '../assets/mamapeacemini_mart.webp'
+import notifyImg from '../assets/notify.png'
 import { contactInfo } from './contact.js'
 
 /** GitHub button on each card opens your profile (same as footer / contact). */
@@ -42,6 +43,24 @@ export const projects = [
     tech: ['React', 'JavaScript', 'Frontend UI'],
     image: mamapeaceminiMartImg,
     liveUrl: '#',
+    githubUrl: githubProfileUrl,
+  },
+  {
+    id: 'notify',
+    title: 'Notify — Institutional SMS Platform',
+    featured: true,
+    description:
+      'Multi-tenant SMS management platform by CODETECHS for schools, businesses, and institutions — contacts, groups, campaigns, scheduling, and credit tracking. Currently used by institutions in production.',
+    impact: 'Live with institutions · Multi-tenant SMS',
+    features: [
+      'Institution dashboards',
+      'Contact & group management',
+      'Campaign scheduling',
+      'Credit tracking',
+    ],
+    tech: ['Next.js', 'React', 'TypeScript', 'Prisma', 'PostgreSQL', 'Arkesel SMS'],
+    image: notifyImg,
+    liveUrl: 'https://notify.codedtechs.com',
     githubUrl: githubProfileUrl,
   },
   {
